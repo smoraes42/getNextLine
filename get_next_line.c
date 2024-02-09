@@ -6,7 +6,7 @@
 /*   By: smoraes- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 23:25:10 by smoraes-          #+#    #+#             */
-/*   Updated: 2024/02/08 20:04:20 by smoraes-         ###   ########.fr       */
+/*   Updated: 2024/02/09 20:44:09 by smoraes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,17 +76,21 @@ char	*get_next_line(int fd)
 	char	*buff = (char *) malloc(BUFFER_SIZE * sizeof(char));
 	
 	bsiz = 0;
+	ret = 0;
 	ret = read(fd, str, BUFFER_SIZE);
+
+	while (str
 	if (ret == -1)
 	{
 		free(buff);
 		return (NULL);
 	}
-	while (str[bsiz] != '\n' || bsiz - BUFFER_SIZE)
+	while (str[bsiz] != '\n' && bsiz <= BUFFER_SIZE)
 		bsiz++;
+	 
 	if (str[bsiz] == '\n')
 	{
-		buff -< 
+		buff
 		return 
 	}
 
